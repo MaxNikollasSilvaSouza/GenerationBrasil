@@ -1,8 +1,8 @@
 package Heranca_e_Polimorfismo;
 
-public class Animal {
+public class Animal implements Som{
 	
-	private String nome;
+	private String nome, soum;
 	private String idade;
 	public Animal(String nome, String idade)
 	{
@@ -23,6 +23,19 @@ public class Animal {
 	}
 	public void setIdade(String idade) {
 		this.idade = idade;
+	}
+	
+	@Override	
+	public void som(String barulho)	
+	{
+		soum = barulho;
+		
+	}
+	public String getSoum() {
+		return soum;
+	}
+	public void setSoum(String soum) {
+		this.soum = soum;
 	}
 
 }

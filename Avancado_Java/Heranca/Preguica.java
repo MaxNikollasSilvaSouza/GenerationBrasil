@@ -1,7 +1,7 @@
 package Heranca_e_Polimorfismo;
 
 public class Preguica extends Animal{
-	private String especie,porte; 
+	private String especie,porte,barulho; 
 	public Preguica(String nome, String idade, String porte)
 	{
 		super(nome,idade);
@@ -20,5 +20,6 @@ public class Preguica extends Animal{
 	public void setPorte(String porte) {
 		this.porte = porte;
 	}
+	
 	
 }
