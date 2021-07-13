@@ -2,7 +2,7 @@ package Heranca_e_Polimorfismo;
 
 public class Animal implements Som{
 	
-	private String nome, soum;
+	private String nome, soum,corre;
 	private String idade;
 	public Animal(String nome, String idade)
 	{
@@ -37,5 +37,22 @@ public class Animal implements Som{
 	public void setSoum(String soum) {
 		this.soum = soum;
 	}
+	
+	@Override
+	public void correr(String corrre)
+	{
+		corre = corrre;
+	}
+	public String getCorre() {
+		return corre;
+	}
+	public void setCorre(String corre) {
+		this.corre = corre;
+	}
+	
+	
+	
+	
+	
 
 }
