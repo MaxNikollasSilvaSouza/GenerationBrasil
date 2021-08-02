@@ -22,7 +22,7 @@ import com.GameGeneration.Loja_de_Games.repository.CategoriaRepository;
 
 
 @RestController
-@RequestMapping
+@RequestMapping("/categoria")
 @CrossOrigin("*")
 public class CategoriaController {
 
@@ -30,21 +30,13 @@ public class CategoriaController {
 	private CategoriaRepository repositoriu;
 	
 	@GetMapping
-	public ResponseEntity<Object>GetAll()
+	public ResponseEntity<List<Categoria>>getAll()
 	{
-		List<Categoria> lista_categorias = repositoriu.findAll();
-		if(lista_categorias.isEmpty())
-		{
-		return ResponseEntity.status(204).build();
-		}
-		else			
-		{
-			return ResponseEntity.ok(repositoriu.findAll());	
-		}
+		return ResponseEntity.ok(repositoriu.findAll());
 	}
 	
 	@GetMapping("/findbyid/{Id}")
-	public ResponseEntity<Categoria> buscarPorId(@PathVariable Long Id)
+	public ResponseEntity<Categoria> getById(@PathVariable Long Id)
 	{
 		return repositoriu.findById(Id).map(resp -> ResponseEntity.ok(resp)).orElse(ResponseEntity.notFound().build());
 		//return ResponseEntity.status(200).body(repositoriu.findById(Id).get());
