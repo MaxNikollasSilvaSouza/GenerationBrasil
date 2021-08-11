@@ -80,6 +80,7 @@ public class UsuarioServicos {
 			String senhaCriptografada = encoder.encode(usuarioParaAlterar.getSenha());
 
 			usuarioExistente.setNome(usuarioParaAlterar.getNome());
+			usuarioExistente.setEmail(usuarioParaAlterar.getEmail());
 			usuarioExistente.setSenha(senhaCriptografada);
 			return Optional.ofNullable(repositorio.save(usuarioExistente));
 		}).orElseGet(() -> {
