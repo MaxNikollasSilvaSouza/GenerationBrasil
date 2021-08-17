@@ -1,0 +1,169 @@
+<!DOCTYPE html>
+<html>
+<head>
+<title>Biblioteca Virtual</title>
+<meta charset="UTF-8">
+<script>
+function NovaEditora(editora) {
+	if (editora=="0"){
+		document.getElementById("ieEditora").style.visibility = "visible";
+	}else{
+		document.getElementById("ieEditora").style.visibility = "hidden";
+	}
+}
+
+function NovaCategoria(categoria) {
+	if (categoria=="0"){
+		document.getElementById("ieCategoria").style.visibility = "visible";
+	}else{
+		document.getElementById("ieCategoria").style.visibility = "hidden";
+	}
+}
+
+function NovoIdioma(idioma) {
+	if (idioma=="0"){
+		document.getElementById("ieIdioma").style.visibility = "visible";
+	}else{
+		document.getElementById("ieIdioma").style.visibility = "hidden";
+	}
+}
+</script>
+
+<style>
+fieldset{
+	border: 2px solid yellow;
+}
+legend{
+	color:Yellow
+	
+}
+</style>
+</head>
+<body style="background-color:black;">
+<h1 style="color:yellow;text-align:center;">BIBLIOTECA ONLINE  - <span style="color:red">CADASTRO DE LIVROS</span></h1>
+<div style="width:715px; height:650px; background-color:black;margin:auto">
+	<form method="POST" action="cadastro.php">
+		<fieldset style=" width:680px;">
+			<legend>Título do livro:</legend>
+			<input style="width:99%" type="text" name="DadosDoLivro[]" id="iTitulo"><!--DadosDoLivro[] no php $DadosDoLivro = $_POST['DadosDoLivro'];-->
+		</fieldset>
+		
+		<fieldset style=" width:570px;margin-top:20px;float:left;">
+			<legend>Subtítulo livro:</legend>
+			<input style="width:99%" type="text" name="DadosDoLivro[]" id="iSubtitulo">
+		</fieldset>
+		<fieldset style="float:left; margin-top:20px;width:77px;">
+			<legend>Peso (Kg):</legend>
+			<input style="width:95%" type="number" name="DadosDoLivro[]" id="iPeso">
+		</fieldset>
+		
+		<fieldset style=" clear:both;float:left; margin-top:20px; width:110px;">
+			<legend>ISBN-10:</legend>
+			<input style="width:95%" type="number" name="DadosDoLivro[]" id="iIsbn10">
+		</fieldset>
+		
+		<fieldset style="float:left; margin-top:20px;width:110px;">
+			<legend>ISBN-13:</legend>
+			<input style="width:95%" type="number" name="DadosDoLivro[]" id="iIsbn13">
+		</fieldset>
+	
+		<fieldset style="float:left; margin-top:20px;width:395px;">
+			<legend>Edição:</legend>
+			<input style="width:20%"  type="number" name="DadosDoLivro[]" id="iEdicao">
+			<input type="radio" name="nTipoedicao" id="iTipoedicao" value="1"> <span style="color:yellow">Revisada</span>
+			<input type="radio" name="nTipoedicao" id="iTipoedicao" value="2"><span style="color:yellow"> Atualizada</span>
+			<input type="radio" name="nTipoedicao" id="iTipoedicao" value="3"><span style="color:yellow"> Aumentada</span>
+		</fieldset>
+		
+		<fieldset style="clear:both;float:left; margin-top:20px;width:110px;">
+			<legend>Volume:</legend>
+			<select style="width:95%" name="DadosDoLivro[]" id="iVolume">
+			<option value="0">Único</option>
+			<option value="1">1</option>
+			<option value="2">2</option>
+			<option value="3">3</option>
+			<option value="4">4</option>
+			<option value="5">5</option>
+			<option value="6">6</option>
+			<option value="7">7</option>
+			<option value="8">8</option>
+			<option value="9">9</option>
+			<option value="10">10</option>
+			</select>
+			
+		</fieldset>
+		
+		<fieldset style="float:left; margin-top:20px;width:113px;">
+			<legend>Páginas:</legend>
+			<input style="width:95%" type="number" name="DadosDoLivro[]" id="ipagina">
+		</fieldset>
+		
+		<fieldset style="float:left; margin-top:20px;width:393px;">
+			<legend>Local de Publicação:</legend>
+			<input style="width:97%"  type="text" name="DadosDoLivro[]" id="iLocal">
+			
+		</fieldset>
+		
+		<fieldset style="clear:both;float:left; margin-top:20px;width:50px;">
+			<legend>Ano:</legend>
+			<input style="width:95%" type="number" name="DadosDoLivro[]" id="iAno">
+		</fieldset>
+		
+		<fieldset style="float:left; margin-top:20px;width:80px;">
+			<legend>Valor:</legend>
+			<input style="width:95%" type="number" name="DadosDoLivro[]" id="iValor">
+		</fieldset>
+		
+		<fieldset style="float:left; margin-top:20px;width:485px;">
+			<legend>Capa:</legend>
+			<input style="color:yellow" type="file" name="nCapa" id="iCapa">
+		</fieldset>
+		
+		<fieldset style="clear:both;float:left; margin-top:20px;width:200px;">
+			<legend>Editora:</legend>
+			<select style="width:100%" name="Editora[]" id="isEditora" onchange="NovaEditora(this.value)">
+				<option select value="1">Pearson</option>
+				<option value="0">outra</option>
+			</select>
+			<input style="width:96%;margin-top:5px;visibility:hidden;" id="ieEditora" name="Editora[]" type="text">
+		</fieldset>
+		
+		<fieldset style="float:left; margin-top:20px;width:296px;">
+			<legend>Categoria:</legend>
+			<select style="width:100%" name="Categoria[]" id="isCategoria" onchange="NovaCategoria(this.value)">
+			<option select value="1">Geometria Analítica</option>
+			<option value="0">outra</option>
+			</select>
+			<input style="width:97%;margin-top:5px;visibility:hidden;" id="ieCategoria" name="Categoria[]" type="text">
+		</fieldset>
+		
+		<fieldset style="float:left; margin-top:20px;width:120px;">
+			<legend>Idioma:</legend>
+			<select style="width:103%" name="Idioma[]" id="iIdioma"  onchange="NovoIdioma(this.value)">
+				<option select value="1">Português-Br</option>
+				<option value="0">outro</option>
+			</select>
+			<input style="width:97%;margin-top:5px;visibility:hidden;" id="ieIdioma" name="Idioma[]" type="text">
+		</fieldset>
+		
+		<fieldset style="clear:both;float:left;width:680px;margin-top:20px;">
+			<legend>Referência:</legend>
+			<input style="width:100%" type="text" name="DadosDoLivro[]" id="iReferencia">
+		</fieldset>
+		
+		<fieldset style="clear:both;float:left;width:680px;margin-top:20px;">
+			<legend>Autores:</legend>
+			<input placeholder="Digite o nome do primeiro autor" style="width:100%" type="text" name="Autor[]" id="iAutor">
+			<input placeholder="Digite o nome do segundo autor" style="width:100%;margin-top:5px;" type="text" name="Autor[]" id="iAutor1">
+			<input placeholder="Digite o nome do terceiro autor"style="width:100%; margin-top:5px;" type="text" name="Autor[]" id="iAutor2">
+			<input placeholder="Digite o nome do quarto autor" style="width:100%; margin-top:5px;" type="text" name="Autor[]" id="iAutor3">
+			<input placeholder="Digite o nome do quinto autor" style="width:100%; margin-top:5px;" type="text" name="Autor[]" id="iAutor4">
+		</fieldset>
+		
+		<button style="clear:both;float:right;margin-top:20px;margin-right:20px;padding:5px;">Cadastrar</button>
+	</form>
+	
+</div>
+
+</body>
+</html>
