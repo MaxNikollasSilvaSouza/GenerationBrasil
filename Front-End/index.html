@@ -1,168 +1,61 @@
 <!DOCTYPE html>
 <html>
-<head>
-<title>Page Title</title>
-<meta charset="UTF-8">
-</head>
-<body  style = "background-image: url(ImagemRetrato3.jpg);">
+    <head>
+        <title>AnimeIsLife</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./_css/index.css">
+        <link rel="icon" href="Logo.jpg" type="image/gif" sizes="16x16">
+        <style>
+        
+            @font-face {
+                font-family:'minhafonte';
+                src:url("./_fonte/STIXTwoText-Italic-VariableFont_wght.ttf");
+            }
+    
+            div 
+            {
+                font-family:minhafonte;
+            }  
+            
+        </style>
+    </head>
 
-		
-			
-			<div style = "width:200px; float:left; margin-left: 20px;">
-				<p style = "opacity: 0;">esquerdo</p>
-			</div>
-			
-			<div style = "width:680px; float:left; margin-left: 20px; margin-left: 20px; ">
-		
-							
-								
-<h1 style="color:red;text-align:center;text-shadow: 2px 2px black;">BIBLIOTECA ONLINE  - <span style="color:red">CADASTRO DE LIVROS</span></h1>
-
-	<form method="POST" action="cadastro.php">
-		<fieldset style=" width:640px;">
-			<legend style = "color: white">Título do livro:</legend>
-			<input style="width:99%" type="text" name="DadosDoLivro[]" id="iTitulo"><!--DadosDoLivro[] no php $DadosDoLivro = $_POST['DadosDoLivro'];-->
-		</fieldset>
-		
-		<fieldset style=" width:640px;margin-top:20px;float:left;">
-			<legend style = "color: white">Subtítulo livro:</legend>
-			<input style="width:99%" type="text" name="DadosDoLivro[]" id="iSubtitulo">
-		</fieldset>
-		<fieldset style="float:left; margin-top:20px;width:77px;">
-			<legend style = "color: white">Peso (Kg):</legend>
-			<input style="width:95%" type="number" name="DadosDoLivro[]" id="iPeso">
-		</fieldset>
-		
-		<fieldset style="float:left; margin-top:20px; width:110px;">
-			<legend style = "color: white">ISBN-10:</legend>
-			<input style="width:95%" type="number" name="DadosDoLivro[]" id="iIsbn10">
-		</fieldset>
-		
-		<fieldset style="float:left; margin-top:20px;width:110px;">
-			<legend style = "color: white">ISBN-13:</legend>
-			<input style="width:95%" type="number" name="DadosDoLivro[]" id="iIsbn13">
-		</fieldset>
-	
-		<fieldset style="float:left; margin-top:20px;width:395px;">
-			<legend style = "color: white">Edição:</legend>
-			<input style="width:20%"  type="number" name="DadosDoLivro[]" id="iEdicao">
-			<input type="radio" name="nTipoedicao" id="iTipoedicao" value="1"> <span style="color:yellow">Revisada</span>
-			<input type="radio" name="nTipoedicao" id="iTipoedicao" value="2"><span style="color:yellow"> Atualizada</span>
-			<input type="radio" name="nTipoedicao" id="iTipoedicao" value="3"><span style="color:yellow"> Aumentada</span>
-		</fieldset>
-		
-		<fieldset style="clear:both;float:left; margin-top:20px;width:110px;">
-			<legend style = "color: white">Volume:</legend>
-			<select style="width:95%" name="DadosDoLivro[]" id="iVolume">
-			<option value="0">Único</option>
-			<option value="1">1</option>
-			<option value="2">2</option>
-			<option value="3">3</option>
-			<option value="4">4</option>
-			<option value="5">5</option>
-			<option value="6">6</option>
-			<option value="7">7</option>
-			<option value="8">8</option>
-			<option value="9">9</option>
-			<option value="10">10</option>
-			</select>
-			
-		</fieldset>
-		
-		<fieldset style="float:left; margin-top:20px;width:113px;">
-			<legend style = "color: white">Páginas:</legend>
-			<input style="width:95%" type="number" name="DadosDoLivro[]" id="ipagina">
-		</fieldset>
-		
-		
-		
-		<fieldset style="float:left; margin-top:20px;width:50px;">
-			<legend style = "color: white">Ano:</legend>
-			<input style="width:95%" type="number" name="DadosDoLivro[]" id="iAno">
-		</fieldset>
-		
-		<fieldset style="float:left; margin-top:20px;width:80px;">
-			<legend style = "color: white">Valor:</legend>
-			<input style="width:95%" type="number" name="DadosDoLivro[]" id="iValor">
-		</fieldset>
-		
-		<fieldset style="float:left; margin-top:20px;width:393px;">
-			<legend style = "color: white">Local de Publicação:</legend>
-			<input style="width:97%"  type="text" name="DadosDoLivro[]" id="iLocal">
-			
-		</fieldset>
-		
-		<fieldset style="float:left; margin-top:20px;width:485px;">
-			<legend style = "color: white">Capa:</legend>
-			<input style="color:yellow" type="file" name="nCapa" id="iCapa">
-		</fieldset>
-		
-		<fieldset style="clear:both;float:left; margin-top:20px;width:200px;">
-			<legend style = "color: white">Editora:</legend>
-			<select style="width:100%" name="Editora[]" id="isEditora" onchange="NovaEditora(this.value)">
-				<option select value="1">Pearson</option>
-				<option value="0">outra</option>
-			</select>
-			<input style="width:96%;margin-top:5px;visibility:hidden;" id="ieEditora" name="Editora[]" type="text">
-		</fieldset>
-		
-		<fieldset style="float:left; margin-top:20px;width:260px;">
-			<legend style = "color: white">Categoria:</legend>
-			<select style="width:100%" name="Categoria[]" id="isCategoria" onchange="NovaCategoria(this.value)">
-			<option select value="1">Geometria Analítica</option>
-			<option value="0">outra</option>
-			</select>
-			<input style="width:97%;margin-top:5px;visibility:hidden;" id="ieCategoria" name="Categoria[]" type="text">
-		</fieldset>
-		
-		<fieldset style="float:left; margin-top:20px;width:120px;">
-			<legend style = "color: white">Idioma:</legend>
-			<select style="width:103%" name="Idioma[]" id="iIdioma"  onchange="NovoIdioma(this.value)">
-				<option select value="1">Português-Br</option>
-				<option select value="2">Inglês-En</option>
-				<option select value="3">Espanhol-Es</option>
-				<option value="0">outro</option>
-			</select>
-			<input style="width:97%;margin-top:5px;visibility:hidden;" id="ieIdioma" name="Idioma[]" type="text">
-		</fieldset>
-		
-		<fieldset style="clear:both;float:left;width:640px;margin-top:20px;">
-			<legend style = "color: white">Referência:</legend>
-			<input style="width:100%" type="text" name="DadosDoLivro[]" id="iReferencia">
-		</fieldset>
-		
-		<fieldset style="float:left; margin-top:20px;width:640px;">
-			<legend style = "color: white">Link:</legend>
-			<select style="width:100%" name="Categoria[]" id="isCategoria" onchange="NovaCategoria(this.value)">
-			<option select value="1">Selecionar</option>
-			<option value="0">outra</option>
-			</select>
-			<input style="width:97%;margin-top:5px;visibility:hidden;" id="ieCategoria" name="Categoria[]" type="text">
-		</fieldset>
-		
-		<fieldset style="clear:both;float:left;width:640px;margin-top:20px;">
-			<legend style = "color: white">Autores:</legend>
-			<input placeholder="Digite o nome do primeiro autor" style="width:100%" type="text" name="Autor[]" id="iAutor">
-			<input placeholder="Digite o nome do segundo autor" style="width:100%;margin-top:5px;" type="text" name="Autor[]" id="iAutor1">
-			<input placeholder="Digite o nome do terceiro autor"style="width:100%; margin-top:5px;" type="text" name="Autor[]" id="iAutor2">
-			<input placeholder="Digite o nome do quarto autor" style="width:100%; margin-top:5px;" type="text" name="Autor[]" id="iAutor3">
-			<input placeholder="Digite o nome do quinto autor" style="width:100%; margin-top:5px;" type="text" name="Autor[]" id="iAutor4">
-		</fieldset>
-		<div style="clear:both;">
-		<button style="float:right;margin-top:20px;margin-right:20px;padding:5px;">Buscar</button>
-		<button style="float:right;margin-top:20px;margin-right:20px;padding:5px;">Atualizar</button>
-		<button style="float:right;margin-top:20px;margin-right:20px;padding:5px;">Cadastrar</button>
-		</div>
-	</form>
-				
-			</div>
-			<div style = "width:200px;  float: left; margin-left: 20px;">
-				<p style = "opacity: 0;">direito</p>
-			</div>
-			
-			
-			
-		
-
-</body>
+    <body class="fundao">
+        <script>
+            function localiframe(endereco)
+            {
+                var iframe = document.getElementById('tv');
+                iframe.src = endereco;
+               
+            }
+        </script>
+        <header>
+            <div>
+                <fieldset  class = "borda_centro">
+                     <h1> AnimeIsLife</h1>
+                </fieldset>
+            </div>
+         </header>
+       
+    <aside>
+            <div id = "aside">
+                <fieldset id="fildset">
+                    <a href="javascript:localiframe('./_paginas/listanimes.html');" class="corlink">Home</a>
+                    <br>
+                    <a href="javascript:localiframe('./_paginas/sobrenos.html');" class="corlink">Sobre nós</a>
+                </fieldset>
+            </div>
+    </aside>
+              
+    <section>
+            
+            <div  class="margem_esq">
+                <iframe id = "tv" src="./_paginas/listanimes.html" frameborder="0" class="iframe"></iframe>
+            </div>
+    </section>   
+        
+       
+        
+        
+    </body>
 </html>
