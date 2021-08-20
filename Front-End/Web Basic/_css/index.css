@@ -1,0 +1,53 @@
+.borda_centro
+{
+
+    border: 2px red;
+    width:97%;
+  text-align: center;
+  text-shadow: 2px 2px rgb(247, 3, 3);
+  /*background-color: blue;*/
+  border-color: red;
+   
+}
+
+#aside
+{
+    float: left;
+    width: 10%;
+    
+    
+
+}
+
+.margem_esq
+{
+   float:top;
+    width: 89.5%;
+   
+    margin-left: 10%;
+}
+
+.iframe
+{
+    
+    width: 100%;
+   
+    height: 1000px;
+}
+
+.corlink
+{
+    color: red;
+   text-align: center;
+}
+#fildset
+{
+    border: 1px black solid;
+}
+
+.fundao
+{
+    background-image: url("../gifs/FundoHome.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+}

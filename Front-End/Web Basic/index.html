@@ -1,0 +1,71 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>AnimeIsLife</title>
+        <meta charset="UTF-8">
+        <link rel="stylesheet" href="./_css/index.css">
+        <link rel="icon" href="Logo.jpg" type="image/gif" sizes="16x16">
+        <style>
+        
+            @font-face {
+                font-family:'minhafonte';
+                src:url("./_fonte/STIXTwoText-Italic-VariableFont_wght.ttf");
+            }
+    
+            div 
+            {
+                font-family:minhafonte;
+            }  
+            
+        </style>
+    </head>
+
+    <body class="fundao">
+        <script>
+            function localiframe(endereco)
+            {
+                var iframe = document.getElementById('tv');
+                iframe.src = endereco;
+               
+            }
+        </script>
+        <header>
+            <div>
+                <fieldset  class = "borda_centro">
+                     <h1> AnimeIsLife</h1>
+                </fieldset>
+            </div>
+         </header>
+       
+    <aside>
+            <div id = "aside">
+                <fieldset id="fildset">
+                    <a href="javascript:localiframe('./_paginas/home.html');" class="corlink">Home</a>
+                    <br>                   
+                    <a href="javascript:localiframe('./_paginas/login.html');" class="corlink">Login</a>
+                    <br>
+                    <a href="javascript:localiframe('./_paginas/cadastro.html');" class="corlink">Cadastro</a>
+                    <br>
+                    <a href="javascript:localiframe('./_paginas/listanimes.html');" class="corlink">Lista</a>
+                    <br>
+                    <a href="javascript:localiframe('./_paginas/sobrenos.html');" class="corlink">Sobre nós</a>
+                    <br>
+                   
+                    
+
+                </fieldset>
+            </div>
+    </aside>
+              
+    <section>
+            
+            <div  class="margem_esq">
+                <iframe id = "tv" src="./_paginas/home.html" frameborder="0" class="iframe"></iframe>
+            </div>
+    </section>   
+        
+       
+        
+        
+    </body>
+</html>

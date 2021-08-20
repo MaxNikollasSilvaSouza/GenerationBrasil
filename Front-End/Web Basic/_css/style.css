@@ -1,0 +1,87 @@
+.borda_centro
+{
+
+    border: 2px black solid;
+    width:100%;
+  text-align: center;
+  text-shadow: 2px 2px rgb(247, 3, 3);
+  background-color: blue;
+   
+}
+
+#aside
+{
+    float: left;
+    width: 10%;
+    background-color: aqua;
+
+}
+
+.margem_esq
+{
+    margin-left: 11.5%;
+    width: 100%;
+}
+
+.borda_esq
+{
+
+    border-right: 2px black solid;
+    border-bottom: 2px black solid;
+    border-left: 2px black solid;
+   
+  text-align: center;
+  border-top: none;
+    
+}
+
+.listah
+{
+    height: 230px;
+    /*background-color: aquamarine;*/
+    justify-content: center;
+}
+
+.distancia
+{
+    margin-left: 3px;
+    margin-right: 3px;
+    display: inline-block;
+    background-color:lightsalmon;
+}
+
+.corlink
+{
+    color: red;
+   text-align: center;
+       
+      
+}
+
+.img_padrao
+{
+    height: 150px;
+
+    width: 200px;
+}
+
+.iframe
+{
+    width: 100%;
+    height: 800px;
+    margin-left: 10%;
+    border: none;
+}
+.fundo
+{
+    background-image: url("../gifs/FundoHome.gif");
+    background-repeat: no-repeat;
+    background-size: cover;
+
+    
+}
+
+.fufu
+{
+    background-color:darkturquoise;
+}
